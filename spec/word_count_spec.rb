@@ -1,6 +1,5 @@
-require 'word_count'
+require 'lib/word_count'
 require_relative 'spec_helper'
-
 
 describe String, "#unique_word_count" do
   it "should return 0 with an empty string" do
