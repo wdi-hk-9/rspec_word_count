@@ -2,31 +2,36 @@ require 'word_count'
 require_relative 'spec_helper'
 
 
-describe String, "#unique_word_count" do
-  it "should return 0 with an empty string" do
+def unique_word_count (str) do
+  # it "should return 0 with an empty string"
+  str.split(/\s+/).length == 0 do
     empty_string = String.new
     word_count = empty_string.unique_word_count
     word_count.should == 0
   end
-  it "should return '1' when the sentence is one words long" do
+  # it "should return '1' when the sentence is one words long"
+  str.split(/\s+/).length == 1 do
     a_string = "coffee"
     word_count = a_string.unique_word_count
     word_count.should == 1
   end
-  it "should return '6' when the sentence is six words long" do
+  # it "should return '6' when the sentence is six words long"
+  str.split(/\s+/).length == 6 do
     a_string = "It was the best of times"
     word_count = a_string.unique_word_count
     word_count.should == 6
   end
-  it "should ignore puntucation" do
+  # it "should ignore puntucation"
+  str.gsub(/[^A-Za-z0-9\s]/i, '') == 6do
     a_string = "I'm (kinda) having fun with this!"
     word_count = a_string.unique_word_count
     word_count.should == 6
   end
 end
 
-describe String, "#word_frequency_count" do
-  it "should return {} with an empty string" do
+def word_frequency_count str do
+  # it "should return {} with an empty string"
+  str.[/\w+/] do
     empty_string = String.new
     frequencies = empty_string.word_frequency_count
     frequencies.should == {}
